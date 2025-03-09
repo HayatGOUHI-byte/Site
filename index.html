@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<!--https://hayatgouhi-byte.github.io/Site/-->
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Site Web</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- HEAP Analytics -->
     <script type="text/javascript">
+        window.heap = window.heap || [], heap.load = function (e, t) {
+            window.heap.appid = e, window.heap.token = t;
+            var r = document.createElement("script");
+            r.type = "text/javascript", r.async = !0, r.src = "https://cdn.heap.io/heap.js", r.onload = function () {
+                heap.load = e;
+            };
+            document.getElementsByTagName("head")[0].appendChild(r);
+        };
+    </script>
+
+
+
+    <!--Google analytics-->
+
+      <script type="text/javascript">
   window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
   heap.load("1493666850");
 </script>
 
-    <!--HEAP ANALYTICS -->
-
 
 </head>
 <body>
-    heap.identify('unique_identifier');
-    <h1>Bienvenue sur mon site web</h1>
-    <p>Voici une page simple pour tester l'intégration de Google Analytics.</p>
-    <p>Changement , sont ajoutés.</p>
-     <p>maintenant ........................!</p>
+    <h1>Bienvenue sur mon site Web</h1>
+    <p>Cliquez sur le bouton ci-dessous pour vous connecter.</p>
+    <button id="loginButton">Se connecter</button>
 
-
-     j'ai ajouté utilisateur
-    
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function () {
+            let userId = 'user@example.com'; // Remplacer par l'ID de l'utilisateur
+            heap.identify(userId); // Enregistrement de l'utilisateur dans Heap
+            alert("Utilisateur identifié avec Heap!");
+        });
+    </script>
 </body>
 </html>
